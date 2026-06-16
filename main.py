@@ -85,7 +85,7 @@ PERSONAS = {
 async def chat_endpoint(request: ChatRequest):
     # Initialize the LangChain model
     try:
-        chat = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.7)
+        chat = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.7)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
     
@@ -119,7 +119,7 @@ async def chat_endpoint(request: ChatRequest):
 @app.post("/api/report")
 async def report_endpoint(request: ChatRequest):
     try:
-        chat = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.2)
+        chat = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.2)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
         
